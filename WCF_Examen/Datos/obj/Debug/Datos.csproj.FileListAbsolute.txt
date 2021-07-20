@@ -1,0 +1,12 @@
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\bin\Debug\Datos.dll.config
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\bin\Debug\Datos.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\bin\Debug\Datos.pdb
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\bin\Debug\EntityFramework.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\bin\Debug\EntityFramework.xml
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\obj\Debug\Datos.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\Datos\obj\Debug\Datos.pdb

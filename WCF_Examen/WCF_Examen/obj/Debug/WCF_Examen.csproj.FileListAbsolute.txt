@@ -1,0 +1,15 @@
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\WCF_Examen.dll.config
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\WCF_Examen.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\WCF_Examen.pdb
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\Datos.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\EntityFramework.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\Datos.pdb
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\Datos.dll.config
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\EntityFramework.xml
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\obj\Debug\WCF_Examen.csproj.AssemblyReference.cache
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\obj\Debug\WCF_Examen.csproj.CoreCompileInputs.cache
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\obj\Debug\WCF_Examen.csproj.CopyComplete
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\obj\Debug\WCF_Examen.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\obj\Debug\WCF_Examen.pdb
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\EntityFramework.SqlServer.dll
+C:\Users\BRAYA\source\repos\WCF_Examen\WCF_Examen\bin\EntityFramework.SqlServer.xml
