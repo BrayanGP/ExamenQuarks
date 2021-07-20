@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examen_Quarks", "Examen_Qua
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplicaccionWeb", "AplicaccionWeb\AplicaccionWeb.csproj", "{038A99D0-653B-48BA-9CB0-48956762DCD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF", "WCF\WCF.csproj", "{BFCC8CB7-1F43-40EF-A162-BE1B79582C18}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{038A99D0-653B-48BA-9CB0-48956762DCD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{038A99D0-653B-48BA-9CB0-48956762DCD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{038A99D0-653B-48BA-9CB0-48956762DCD2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFCC8CB7-1F43-40EF-A162-BE1B79582C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFCC8CB7-1F43-40EF-A162-BE1B79582C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFCC8CB7-1F43-40EF-A162-BE1B79582C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFCC8CB7-1F43-40EF-A162-BE1B79582C18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
