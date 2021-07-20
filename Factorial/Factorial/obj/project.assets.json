@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BRAYA\\Desktop\\Factorial\\Factorial\\Factorial.csproj",
+      "projectUniqueName": "C:\\Users\\BRAYA\\Documents\\GitHub\\ExamenQuarks\\Factorial\\Factorial\\Factorial.csproj",
       "projectName": "Factorial",
-      "projectPath": "C:\\Users\\BRAYA\\Desktop\\Factorial\\Factorial\\Factorial.csproj",
+      "projectPath": "C:\\Users\\BRAYA\\Documents\\GitHub\\ExamenQuarks\\Factorial\\Factorial\\Factorial.csproj",
       "packagesPath": "C:\\Users\\BRAYA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BRAYA\\Desktop\\Factorial\\Factorial\\obj\\",
+      "outputPath": "C:\\Users\\BRAYA\\Documents\\GitHub\\ExamenQuarks\\Factorial\\Factorial\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -24,3 +24,16 @@ C:\Users\BRAYA\Desktop\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.csp
 C:\Users\BRAYA\Desktop\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.dll
 C:\Users\BRAYA\Desktop\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.pdb
 C:\Users\BRAYA\Desktop\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.genruntimeconfig.cache
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\bin\Debug\netcoreapp3.1\Factorial.exe
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\bin\Debug\netcoreapp3.1\Factorial.deps.json
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\bin\Debug\netcoreapp3.1\Factorial.runtimeconfig.json
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\bin\Debug\netcoreapp3.1\Factorial.runtimeconfig.dev.json
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\bin\Debug\netcoreapp3.1\Factorial.dll
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\bin\Debug\netcoreapp3.1\Factorial.pdb
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.csproj.AssemblyReference.cache
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.AssemblyInfoInputs.cache
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.AssemblyInfo.cs
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.csproj.CoreCompileInputs.cache
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.dll
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.pdb
+C:\Users\BRAYA\Documents\GitHub\ExamenQuarks\Factorial\Factorial\obj\Debug\netcoreapp3.1\Factorial.genruntimeconfig.cache
