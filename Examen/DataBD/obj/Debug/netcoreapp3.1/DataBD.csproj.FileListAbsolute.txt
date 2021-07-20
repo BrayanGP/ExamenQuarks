@@ -1,0 +1,9 @@
+C:\Users\BRAYA\source\repos\Examen\DataBD\bin\Debug\netcoreapp3.1\DataBD.deps.json
+C:\Users\BRAYA\source\repos\Examen\DataBD\bin\Debug\netcoreapp3.1\DataBD.dll
+C:\Users\BRAYA\source\repos\Examen\DataBD\bin\Debug\netcoreapp3.1\DataBD.pdb
+C:\Users\BRAYA\source\repos\Examen\DataBD\obj\Debug\netcoreapp3.1\DataBD.csproj.AssemblyReference.cache
+C:\Users\BRAYA\source\repos\Examen\DataBD\obj\Debug\netcoreapp3.1\DataBD.AssemblyInfoInputs.cache
+C:\Users\BRAYA\source\repos\Examen\DataBD\obj\Debug\netcoreapp3.1\DataBD.AssemblyInfo.cs
+C:\Users\BRAYA\source\repos\Examen\DataBD\obj\Debug\netcoreapp3.1\DataBD.csproj.CoreCompileInputs.cache
+C:\Users\BRAYA\source\repos\Examen\DataBD\obj\Debug\netcoreapp3.1\DataBD.dll
+C:\Users\BRAYA\source\repos\Examen\DataBD\obj\Debug\netcoreapp3.1\DataBD.pdb

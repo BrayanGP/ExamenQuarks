@@ -1,0 +1,232 @@
+﻿@model Examen_Quarks.cliente
+
+@{
+    ViewBag.Title = "create";
+}
+
+<h2>Crear</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>cliente</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.apellidoPaterno, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.apellidoPaterno, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.apellidoPaterno, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.apellidoMaterno, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.apellidoMaterno, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.apellidoMaterno, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.fechaNacimiento, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.fechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.fechaNacimiento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Calle</label>
+        <div class="col-md-10">
+            <input class="form-control" name="calle" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Numero Exterior</label>
+        <div class="col-md-10">
+            <input class="form-control" name="numeroExterior" />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Numero Interior</label>
+        <div class="col-md-10">
+            <input class="form-control" name="numeroInterior" />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" >Codigo Postal</label>
+        <div class="col-md-10">
+            <input class="form-control" id="CP" name="codigoPostal" />
+
+        </div>
+    </div>
+    <div class="form-group"> 
+        <div class="col-md-2">
+        </div>
+            <div class="col-md-3">
+                <a class="form-control btn btn-primary col-3" name="buscar" onclick="buscar()">Buscar</a>
+                @Html.ActionLink("cargar XML", "cargarXML")
+            </div>
+        
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Colonia</label>
+        <div class="col-md-10">
+            <select class="form-control" id="idColonia" name="colonia"></select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Municipio</label>
+        <div class="col-md-10">
+            <input class="form-control" id="idMunicipio" name="municipio" readonly />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Ciudad</label>
+        <div class="col-md-10">
+            <input class="form-control" id="idCiudad" name="ciudad" readonly />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Estado</label>
+        <div class="col-md-10">
+            <input class="form-control" id="idEstado" name="estado" readonly />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Numero de Telefono de domicilio</label>
+        <div class="col-md-10">
+            <input class="form-control" name="NumTelefono" />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Numero de celular</label>
+        <div class="col-md-10">
+            <input class="form-control" name="numeroCelular" />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Correo Electronico</label>
+        <div class="col-md-10">
+            <input class="form-control" name="correoElectronico" />
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function buscar() {
+        urlw = "../Padre/buscarRFC";
+       
+        var input = $("#CP").val();
+        if (input == "") {
+            return;
+        }
+        var parametros = { CP: parseInt(input) };
+        jsonParams = JSON.stringify(parametros);
+        $.ajax(
+            {
+                type: "GET",
+                url: urlw,
+                data: { CP: input },
+                contentType: "application/json; charset=utf-8",
+                dataType: "JSON",
+                success: Exito,
+                error: ErrorJson
+            });
+
+    }
+    function Exito(data) {
+        var json;
+        try {
+            json = data;
+            if (json != null) {
+                
+    /*            alert('Jalo perfectamente');*/
+                var selector = document.getElementById("idColonia");
+                    for (var i = 0; i < json.length;i++)
+                    {
+                        selector.options[i] = new Option(json[i]["colonia"], json[i]["colonia"])
+                    }
+                    $("#idMunicipio").val(json[0].municipio);
+                    $("#idCiudad").val(json[0].ciudad);
+                    $("#idEstado").val(json[0].estado);
+                        
+
+
+
+            }
+            else {
+                alert('la respuesta es incorrecta' + data.d);
+            }
+
+
+        } catch (ex) {
+            json = [];
+            alert('Error al ingresar los datos');
+        }
+
+    }
+    function ErrorJson(jqXHR, exception) {
+        var msg = '';
+        if (jqXHR.status === 0) {
+            msg = 'No está conectado, favor de verificar su conexión.';
+        }
+        else if (jqXHR.status === 404) {
+            msg = 'Página no encontrada [404]';
+        }
+        else if (jqXHR.status === 500) {
+            msg = 'Error no hay conexión al servidor [500]';
+        }
+        else if (jqXHR.status === 'parseerror') {
+            msg = 'El parseo del JSON es erróneo.';
+        }
+        else if (jqXHR.status === 'timeout') {
+            $('body').addClass('loaded');
+        }
+        else if (jqXHR.status === 'abort') {
+            msg = 'La petición Ajax fue abortada.';
+        }
+        else {
+            msg = 'Error no conocido. ';
+            console.log(exception);
+        }
+        alert(msg);
+    }
+</script>

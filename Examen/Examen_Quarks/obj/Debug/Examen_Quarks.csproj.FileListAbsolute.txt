@@ -1,0 +1,11 @@
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\bin\Debug\Examen_Quarks.dll.config
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\bin\Debug\Examen_Quarks.dll
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\bin\Debug\Examen_Quarks.pdb
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\bin\Debug\EntityFramework.dll
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\bin\Debug\EntityFramework.xml
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\obj\Debug\Examen_Quarks.csproj.CoreCompileInputs.cache
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\obj\Debug\Examen_Quarks.csproj.CopyComplete
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\obj\Debug\Examen_Quarks.dll
+C:\Users\BRAYA\source\repos\Examen\Examen_Quarks\obj\Debug\Examen_Quarks.pdb

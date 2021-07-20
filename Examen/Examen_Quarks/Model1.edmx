@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="examenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="60" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="60" />
+          <Property Name="fechaNacimiento" Type="varchar" MaxLength="60" />
+          <Property Name="idDomicilio" Type="int" />
+        </EntityType>
+        <EntityType Name="contacto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumTeleDomicilio" Type="varchar" MaxLength="20" />
+          <Property Name="celular" Type="varchar" MaxLength="20" />
+          <Property Name="correoElectronico" Type="varchar" MaxLength="60" />
+          <Property Name="idCliente" Type="int" />
+        </EntityType>
+        <EntityType Name="domicilio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="numeroExterior" Type="varchar" MaxLength="20" />
+          <Property Name="numeroInterior" Type="varchar" MaxLength="20" />
+          <Property Name="codigoPostal" Type="varchar" MaxLength="20" />
+          <Property Name="colonia" Type="varchar" MaxLength="50" />
+          <Property Name="municipio" Type="varchar" MaxLength="50" />
+          <Property Name="ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DomicilioConsulta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoPostal" Type="int" />
+          <Property Name="colonia" Type="varchar" MaxLength="50" />
+          <Property Name="municipio" Type="varchar" MaxLength="50" />
+          <Property Name="ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__cliente__idDomic__07C12930">
+          <End Role="domicilio" Type="Self.domicilio" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="domicilio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="idDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contacto__idClie__08B54D69">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="contacto" Type="Self.contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contacto">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="examenModelStoreContainer">
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contacto" EntityType="Self.contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="domicilio" EntityType="Self.domicilio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DomicilioConsulta" EntityType="Self.DomicilioConsulta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__cliente__idDomic__07C12930" Association="Self.FK__cliente__idDomic__07C12930">
+            <End Role="domicilio" EntitySet="domicilio" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contacto__idClie__08B54D69" Association="Self.FK__contacto__idClie__08B54D69">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="contacto" EntitySet="contacto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="examenModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ModeloData" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="domicilio" EntityType="examenModel.domicilio" />
+          <EntitySet Name="DomicilioConsulta" EntityType="examenModel.DomicilioConsulta" />
+          <EntitySet Name="cliente" EntityType="examenModel.cliente" />
+          <EntitySet Name="contacto" EntityType="examenModel.contacto" />
+          <AssociationSet Name="FK__cliente__idDomic__07C12930" Association="examenModel.FK__cliente__idDomic__07C12930">
+            <End Role="domicilio" EntitySet="domicilio" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contacto__idClie__08B54D69" Association="examenModel.FK__contacto__idClie__08B54D69">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="contacto" EntitySet="contacto" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="domicilio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="numeroExterior" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="numeroInterior" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="codigoPostal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="municipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cliente" Relationship="examenModel.FK__cliente__idDomic__07C12930" FromRole="domicilio" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="DomicilioConsulta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoPostal" Type="Int32" />
+          <Property Name="colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="municipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="idDomicilio" Type="Int32" />
+          <NavigationProperty Name="domicilio" Relationship="examenModel.FK__cliente__idDomic__07C12930" FromRole="cliente" ToRole="domicilio" />
+          <NavigationProperty Name="contacto" Relationship="examenModel.FK__contacto__idClie__08B54D69" FromRole="cliente" ToRole="contacto" />
+        </EntityType>
+        <EntityType Name="contacto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumTeleDomicilio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="correoElectronico" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="idCliente" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="examenModel.FK__contacto__idClie__08B54D69" FromRole="contacto" ToRole="cliente" />
+        </EntityType>
+        <Association Name="FK__cliente__idDomic__07C12930">
+          <End Type="examenModel.domicilio" Role="domicilio" Multiplicity="0..1" />
+          <End Type="examenModel.cliente" Role="cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="domicilio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="idDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contacto__idClie__08B54D69">
+          <End Type="examenModel.cliente" Role="cliente" Multiplicity="0..1" />
+          <End Type="examenModel.contacto" Role="contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contacto">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="examenModelStoreContainer" CdmEntityContainer="ModeloData">
+          <EntitySetMapping Name="domicilio">
+            <EntityTypeMapping TypeName="examenModel.domicilio">
+              <MappingFragment StoreEntitySet="domicilio">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="municipio" ColumnName="municipio" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="numeroInterior" ColumnName="numeroInterior" />
+                <ScalarProperty Name="numeroExterior" ColumnName="numeroExterior" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomicilioConsulta">
+            <EntityTypeMapping TypeName="examenModel.DomicilioConsulta">
+              <MappingFragment StoreEntitySet="DomicilioConsulta">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="municipio" ColumnName="municipio" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="examenModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="idDomicilio" ColumnName="idDomicilio" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacto">
+            <EntityTypeMapping TypeName="examenModel.contacto">
+              <MappingFragment StoreEntitySet="contacto">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="NumTeleDomicilio" ColumnName="NumTeleDomicilio" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

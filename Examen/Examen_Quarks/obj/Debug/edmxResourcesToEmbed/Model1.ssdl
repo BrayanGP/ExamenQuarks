@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="examenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="60" />
+    <Property Name="apellidoPaterno" Type="varchar" MaxLength="60" />
+    <Property Name="apellidoMaterno" Type="varchar" MaxLength="60" />
+    <Property Name="fechaNacimiento" Type="varchar" MaxLength="60" />
+    <Property Name="idDomicilio" Type="int" />
+  </EntityType>
+  <EntityType Name="contacto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumTeleDomicilio" Type="varchar" MaxLength="20" />
+    <Property Name="celular" Type="varchar" MaxLength="20" />
+    <Property Name="correoElectronico" Type="varchar" MaxLength="60" />
+    <Property Name="idCliente" Type="int" />
+  </EntityType>
+  <EntityType Name="domicilio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="calle" Type="varchar" MaxLength="50" />
+    <Property Name="numeroExterior" Type="varchar" MaxLength="20" />
+    <Property Name="numeroInterior" Type="varchar" MaxLength="20" />
+    <Property Name="codigoPostal" Type="varchar" MaxLength="20" />
+    <Property Name="colonia" Type="varchar" MaxLength="50" />
+    <Property Name="municipio" Type="varchar" MaxLength="50" />
+    <Property Name="ciudad" Type="varchar" MaxLength="50" />
+    <Property Name="estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DomicilioConsulta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigoPostal" Type="int" />
+    <Property Name="colonia" Type="varchar" MaxLength="50" />
+    <Property Name="municipio" Type="varchar" MaxLength="50" />
+    <Property Name="ciudad" Type="varchar" MaxLength="50" />
+    <Property Name="estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__cliente__idDomic__07C12930">
+    <End Role="domicilio" Type="Self.domicilio" Multiplicity="0..1" />
+    <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domicilio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="idDomicilio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__contacto__idClie__08B54D69">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="contacto" Type="Self.contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contacto">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="examenModelStoreContainer">
+    <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contacto" EntityType="Self.contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="domicilio" EntityType="Self.domicilio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DomicilioConsulta" EntityType="Self.DomicilioConsulta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__cliente__idDomic__07C12930" Association="Self.FK__cliente__idDomic__07C12930">
+      <End Role="domicilio" EntitySet="domicilio" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__contacto__idClie__08B54D69" Association="Self.FK__contacto__idClie__08B54D69">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="contacto" EntitySet="contacto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
